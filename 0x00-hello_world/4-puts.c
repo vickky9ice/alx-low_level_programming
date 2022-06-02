@@ -1,5 +1,3 @@
-type vi 4-puts.c
-then type
 #include <stdio.h>
 
 /**
