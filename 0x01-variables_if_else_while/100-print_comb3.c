@@ -5,7 +5,7 @@
 /**
  * main - Entry point
  *
- * Description: a program that prints all possible different combinations of two digits
+ * Description: prints all possible different combinations of two digits
  *
  * Return: the main return 0
  */
