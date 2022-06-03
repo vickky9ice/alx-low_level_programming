@@ -5,7 +5,7 @@
 /**
  * main - Entry point
  *
- * Description: a program that prints all possible combinations of single-digit numbers
+ * Description: prints all possible combinations of single-digit numbers
  *
  * Return: the main return 0
  *
