@@ -1,14 +1,13 @@
 #include <stdio.h>
 
-/**
- * Author: Adeboye Victor Oyekanmi
- */
+/**Author: Adeboye Victor Oyekanmi*/
 
 /**
- * main - Prints all letters of the alphabet except q and e
+ * main - Entry point
  *
- * Description: This program prints the alphabet in lowercase, followed by a new line.
- * Return: Always 0 (Success)
+ * Description: This program prints the alphabet in lowercase.
+ *
+ * Return: the main return 0
  */
 int main(void)
 {
