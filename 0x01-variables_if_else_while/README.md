@@ -5,3 +5,4 @@ Task3 - Write a program that prints the alphabet in lowercase, and then in upper
 Task4 - Write a program that prints the alphabet in lowercase, followed by a new line.
 Task5 - Write a program that prints all single digit numbers of base 10 starting from 0, followed by a new line.
 Task6 - Write a program that prints all single digit numbers of base 10 starting from 0, followed by a new line.
+Task7 - Write a program that prints the lowercase alphabet in reverse, followed by a new line.
