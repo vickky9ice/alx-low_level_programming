@@ -13,14 +13,16 @@
  */
 int main(void)
 {
-	char bothcases;
+	char b;
 
-	for (bothcases = 'a'; bothcases <= 'z'; bothcases++)
-		putchar(bothcases);
-
-	for (bothcases = 'A'; bothcases <= 'Z'; bothcases++)
-		putchar(bothcases);
-
+	for (b = 'a'; b <= 'z'; b++)
+	{
+		putchar(b);
+	}
+	for (b = 'A'; b <= 'Z'; b++)
+	{
+		putchar(b);
+	}
 	putchar('\n');
 
 	return (0);
