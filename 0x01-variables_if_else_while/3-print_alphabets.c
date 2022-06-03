@@ -1,13 +1,12 @@
-/**
- * File: 3-print_alphabets.c
- * Auth: Adeboye Victor Oyekanmi
- *
- */
-
 #include <stdio.h>
+#include <stlib.h>
+#include <time.h>
+/**Author - Adeboye Victor Oyekanmi */
 
 /*
  * main - Entry point
+ *
+ * Description - This program prints alphabets in lower and then in uppercase.
  *
  * Return: Always 0 (Success)
  */
