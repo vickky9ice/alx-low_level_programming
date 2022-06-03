@@ -3,13 +3,14 @@
 #include <time.h>
 /**Author - Adeboye Victor Oyekanmi */
 
-/*
+/**
  * main - Entry point
  *
- * Description - This program prints alphabets in lower and then in uppercase.
+ * Description: This program prints alphabets in lower and then in uppercase.
  *
- * Return: Always 0 (Success)
+ * Return: the main return 0
  */
+
 int main(void)
 {
 	char b;
