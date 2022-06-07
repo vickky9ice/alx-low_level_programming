@@ -13,8 +13,7 @@ void print_alphabet(void)
 	char lower;
 
 	for (lower = 'a'; lower <= 'z'; lower++)
-	{
-		printf(lower);
-	}
+		_putchar(lower);
+	
 	printf('\n');
 }
