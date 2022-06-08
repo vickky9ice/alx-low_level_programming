@@ -10,12 +10,13 @@
  */
 void print_alphabet(void)
 {
+	int _putchar(char c);
 	char lower;
 
 	for (lower = 'a'; lower <= 'z'; lower++)
-		printf(lower);
+		_putchar(lower);
 	
-	printf('\n');
+	_putchar('\n');
 
 	return (0);
 }
