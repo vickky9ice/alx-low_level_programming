@@ -10,13 +10,15 @@
  */
 void print_alphabet(void)
 {
-	int _putchar(char c);
-	char lower;
+	int i;
+	int j;
 
-	for (lower = 'a'; lower <= 'z'; lower++)
-		_putchar(lower);
-	
-	_putchar('\n');
-
-	return (0);
+	for (i = 0; i < 10; i++)
+	{
+		for (j = 'a'; j < 'z'; j++)
+		{
+			_putchar(j);
+		}
+		_putchar('\n');
+	}
 }
