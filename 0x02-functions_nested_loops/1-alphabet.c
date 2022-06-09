@@ -13,7 +13,7 @@ void print_alphabet(void)
 	int i;
 	for (i = 97; i <= 122; i++)
 	{
-		printf(i);
+		_putchar(i);
 	}
-	printf('\n');
+	_putchar('\n');
 }
