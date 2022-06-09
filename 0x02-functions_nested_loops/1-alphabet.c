@@ -2,8 +2,7 @@
 /**Author - Adeboye Victor Oyekanmi*/
 
 /**
- *
- * print_alphabet: a function that prints lowercase alphabets
+ * print_alphabet - a function that prints lowercase alphabets
  *
  * Return: Always return 0
  */
