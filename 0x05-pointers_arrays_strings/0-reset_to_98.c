@@ -8,12 +8,9 @@
 
 void reset_to_98(int *n)
 {
-	int new = 98;
-	int *n;
+	int *n = 98;
 
-	n = &new;
+	_putchar("The value of pointer n is: %d\n", n );
 
-	_putchar("The value of int *n pointer is: %x\n" &new );
-
-	return (0);
+	return (98);
 }
