@@ -2,8 +2,9 @@
 /**Author: Adeboye Victor Oyekanmi*/
 
 /**
- *_strlen - returns the length of a string.
- *@s: Pointer pointing to a string
+ * _strlen - returns the length of a string.
+ * @s: Pointer pointing to a string
+ * Return: return length of string
  */
 int _strlen(char *s)
 {
