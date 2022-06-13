@@ -5,9 +5,9 @@
  * swap_int - swaps the value of two integers
  * @ab: pointer to swap
  */
-void swap_int(int *a, int *b);
+void swap_int(int *a, int *b)
 {
-	temp = *a;
+	int tmp = *a;
 	*a = *b;
-	*b = temp;
+	*b = tmp;
 }
