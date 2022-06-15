@@ -52,31 +52,42 @@ char *add_strings(char *n1, char *n2, char *r, int r_index)
 	return (r + r_index + 1);
 }
 /**
- * infinite_add - Adds two numbers.
- * @n1: The first number to be added.
- * @n2: The second number to be added.
- * @r: The buffer to store the result.
- * @size_r: The buffer size.
+ * infinite_add - Adds two numbers
+ * @n1: Pointer to the first character of number 1
+ * @n2: Pointer to the first character of number 2
+ * @r: Buffer where to write the result
+ * @n: Buffer size
  *
- * Return: If r can store the sum - a pointer to the result.
- * If r cannot store the sum - 0.
+ * Return: Pointer to the result of the string
  */
-char *infinite_add(char *n1, char *n2, char *r, int size_r)
+char *infinite_add(char *n1, char *n2, char *r, int size_r);
 {
-	int index, n1_len = 0, n2_len = 0;
+	int len1 = 0, len2 = 0;
+	int add = 0;
+	int i = n - 2;
 
-	for (index = 0; *(n1 + index); index++)
-		n1_len++;
+	while (n1[len1 + 1] != 0)
+		len1++;
+	while (n2[len2 + 1] != 0)
+		len2++;
+	r[n - 1] = 0;
 
-	for (index = 0; *(n2 + index); index++)
-		n2_len++;
+	while (i >= 0 && (len1 >= 0 || len2 >= 0))
+	{
+		add += (len1 < 0 ? '0' : n1[len1]) + (len2 < 0 ? '0' : n2[len2]);
+		add -= 2 * '0';
+		r[i] = add % 10 + '0';
+		add /= 10;
+		i--;
+		len1--;
+		len2--;
+	}
 
-	if (size_r <= n1_len + 1 || size_r <= n2_len + 1)
+	if ((i < len1 || i < len2) || (i < 0 && add))
 		return (0);
 
-	n1 += n1_len - 1;
-	n2 += n2_len - 1;
-	*(r + size_r) = '\0';
+	add ? r[i] = add + '0' : 1;
+	i += add ? 0 : 1;
 
-	return (add_strings(n1, n2, r, --size_r));
+	return (r + i);
 }
