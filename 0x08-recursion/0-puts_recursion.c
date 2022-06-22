@@ -1,7 +1,8 @@
 #include "main.h"
 /**Author: Adeboye Victor Oyekanmi*/
 
-/**_puts_recursion - prints a string, followed by a new line.
+/**
+ * _puts_recursion - prints a string, followed by a new line.
  * @s: string to print
  * Return: none
  */
