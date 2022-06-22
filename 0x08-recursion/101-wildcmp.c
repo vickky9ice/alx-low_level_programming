@@ -1,12 +1,5 @@
 #include "main.h"
-/**
- * Author: Adeboye Victor Oyekanmi
- */
-
-int strlen_no_wilds(char *str);
-void iterate_wild(char **wildstr);
-char *postfix_match(char *str, char *postfix);
-int wildcmp(char *s1, char *s2);
+/**Author: Adeboye Victor Oyekanmi*/
 
 /**
  * strlen_no_wilds - Returns the length of a string,
@@ -15,19 +8,25 @@ int wildcmp(char *s1, char *s2);
  *
  * Return: The length.
  */
+int strlen_no_wilds(char *str);
+void iterate_wild(char **wildstr);
+char *postfix_match(char *str, char *postfix);
+int wildcmp(char *s1, char *s2);
+
+
 int strlen_no_wilds(char *str)
 {
 	int len = 0, index = 0;
-	
+
 	if (*(str + index))
 	{
 		if (*str != '*')
 			len++;
-		
+
 		index++;
 		len += strlen_no_wilds(str + index);
 	}
-	
+
 	return (len);
 }
 
