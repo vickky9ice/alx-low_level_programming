@@ -1,34 +1,54 @@
-#include "main.h"
+#include <stdio.h>
 #include <stdlib.h>
+#include <ctype.h>
+#include "main.h"
 /**Author: Adeboye Victor Oyekanmi*/
 
 /**
- * main - Prints the addition of positive numbers,
- * followed by a new line.
- * @argc: The number of arguments passed to the program.
- * @argv: An array of pointers to the arguments.
+ * main - Add positive numbers
+ * @argc: The number of command line arguments
+ * @argv: The command line arguments
  *
- * Return: If one of the numbers contains symbols that are non-digits - 1.
- * Otherwise - 0.
+ * Return: 0 if successful, 1 if any arguments are not positive numbers
  */
 int main(int argc, char *argv[])
 {
-	int num, digit, sum = 0;
+	int i;
+	unsigned int sum;
 
-	for (num = 1; num < argc; num++)
+	sum = 0;
+	for (i = 1; i < argc; i++)
 	{
-		for (digit = 0; argv[num][digit]; digit++)
+		if (is_positive_number(argv[i]))
 		{
-			if (argv[num][digit] < '0' || argv[num][digit] > '9')
-			{
-				printf("Error\n");
-				return (1);
-			}
+			sum += atoi(argv[i]);
 		}
-
-		sum += atoi(argv[num]);
+		else
+		{
+			printf("Error\n");
+			return (1);
+		}
 	}
-	printf("%d\n", sum);
+
+	printf("%u\n", sum);
 
 	return (0);
+}
+
+/**
+ * is_positive_number - Check if a string contains only digits
+ * @number: The string to check
+ *
+ * Return: 1 if string contains only digits, 0 otherwise
+ */
+int is_positive_number(char *number)
+{
+	int i;
+
+	for (i = 0; number[i] != '\0'; i++)
+	{
+		if (!isdigit(number[i]))
+			return (0);
+	}
+	return (1);
 }
