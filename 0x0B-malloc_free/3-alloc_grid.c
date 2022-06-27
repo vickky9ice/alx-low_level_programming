@@ -4,44 +4,42 @@
 /**Author: Adeboye Victor Oyekanmi*/
 
 /**
- * alloc_grid - entry point.
- * @width: colums of the array.
- * @height: rows of the array.
- * Return:  An array of two dimensional.
+ * alloc_grid - function that returns a pointer to a 2 dimensional array of int
+ *
+ * @width: width of the grid
+ * @height: height of the grid
+ *
+ * Return: address of the newly allocated memory
  */
+
 int **alloc_grid(int width, int height)
 {
-	int **m;
-	int i, x, y;
-	
+	int i, j, m, n;
+	int **grid;
+
 	if (width <= 0 || height <= 0)
 		return (NULL);
-	/*Assign memory at the rows */
-	m = (int **) malloc(height * sizeof(int *));
-	if (m == NULL)
-	{
-		free(m);
-		return (0);
-	}
-	/*Assign memory to each element*/
+
+	grid = malloc(height * sizeof(int *));
+	if (grid == NULL)
+		return (NULL);
 	for (i = 0; i < height; i++)
 	{
-		m[i] = (int *) malloc(width * sizeof(int));
-		if (m[i] == NULL)
+		grid[i] = malloc(width * sizeof(int));
+		if (grid[i] == NULL)
 		{
-			for (; i >= 0; i--)
-				free(m[i]);
-			free(i);
-			return (0);
+			for (j = 0; j < i; j++)
+			{
+				free(grid[j]);
+			}
+			free(grid);
+			return (NULL);
 		}
 	}
-	/**Initialize each element*/
-	for (x = 0; x < height; x++)
+	for (m = 0; m < height; m++)
 	{
-		for (y = 0; y < width; y++)
-		{
-			m[x][y] = 0;
-		}
+		for (n = 0; n < width; n++)
+			grid[m][n] = 0;
 	}
-	return (m);
+	return (grid);
 }
