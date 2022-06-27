@@ -12,26 +12,26 @@
 int **alloc_grid(int width, int height)
 {
 	int **m;
-	int a, x, y;
+	int i, x, y;
 	
 	if (width <= 0 || height <= 0)
 		return (NULL);
-	/* Assign memory at the rows */
+	/*Assign memory at the rows */
 	m = (int **) malloc(height * sizeof(int *));
 	if (m == NULL)
 	{
 		free(m);
 		return (0);
 	}
-	/**Assign memory to each element*/
-	for (a = 0; a < height; a++)
+	/*Assign memory to each element*/
+	for (i = 0; i < height; i++)
 	{
-		m[a] = (int *) malloc(width * sizeof(int));
-		if (m[a] == NULL)
+		m[i] = (int *) malloc(width * sizeof(int));
+		if (m[i] == NULL)
 		{
-			for (; a >= 0; a--)
-				free(m[a]);
-			free(a);
+			for (; i >= 0; i--)
+				free(m[i]);
+			free(i);
 			return (0);
 		}
 	}
