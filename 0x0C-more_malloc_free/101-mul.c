@@ -10,6 +10,7 @@
  *
  * Return: product of argv[1] by argv[2]
  */
+
 int main(int argc, char *argv[])
 {
 	char *num1, *num2;
@@ -96,6 +97,7 @@ void _error(void)
  *
  * Return: length of string
  */
+
 int _strlen(char *s)
 {
 	int i = 0;
