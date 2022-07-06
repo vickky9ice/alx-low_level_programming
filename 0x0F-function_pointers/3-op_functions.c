@@ -56,7 +56,7 @@ int op_div(int a, int b)
 }
 
 /**
- * p_mod - calculates the module of two numbers.
+ * op_mod - calculates the module of two numbers.
  * @a: first number.
  * @b: second number.
  *
