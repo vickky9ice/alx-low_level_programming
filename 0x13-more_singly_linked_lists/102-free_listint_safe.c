@@ -41,6 +41,7 @@ int _check_and_free(listint_t *head, listint_safe *prev)
 size_t free_listint_safe(listint_t **h)
 {
 	int t;
+
 	if (*h == NULL)
 		return (0);
 
