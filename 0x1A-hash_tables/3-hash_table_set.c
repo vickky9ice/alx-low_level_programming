@@ -1,51 +1,65 @@
 #include "hash_tables.h"
+
 /**
- * hash_table_set - creates a new node in the hashtable
- * @ht: pointer to the hashtable
- * @key: key
- * @value: value to place in the node
- * Return: 1  in success 0 otherwise
+ * add_n_hash - adds a node at the beginning of a hash at a given index
+ *
+ * @head: head of the hash linked list
+ * @key: key of the hash
+ * @value: value to store
+ * Return: head of the hash
+ */
+hash_node_t *add_n_hash(hash_node_t **head, const char *key, const char *value)
+{
+	hash_node_t *tmp;
+
+	tmp = *head;
+
+	while (tmp != NULL)
+	{
+		if (strcmp(key, tmp->key) == 0)
+		{
+			free(tmp->value);
+			tmp->value = strdup(value);
+			return (*head);
+		}
+		tmp = tmp->next;
+	}
+
+	tmp = malloc(sizeof(hash_node_t));
+
+	if (tmp == NULL)
+		return (NULL);
+
+	tmp->key = strdup(key);
+	tmp->value = strdup(value);
+	tmp->next = *head;
+	*head = tmp;
+
+	return (*head);
+}
+
+/**
+ * hash_table_set - adds a hash (key, value) to a given hash table
+ *
+ * @ht: pointer to the hash table
+ * @key: key of the hash
+ * @value: value to store
+ * Return: 1 if successes, 0 if fails
  */
 int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
-	hash_node_t *new_node = malloc(sizeof(hash_node_t));
-	unsigned long int haidx;
-	hash_node_t *temp;
+	unsigned long int k_index;
 
-	if (ht == NULL || key == '\0' || *key == '\0')
+	if (ht == NULL)
 		return (0);
-	if (new_node == NULL)
+
+	if (key == NULL || *key == '\0')
 		return (0);
-	new_node->key = strdup(key);
-	new_node->value = strdup(value);
-	haidx = key_index((unsigned char *)key, ht->size);
-	if (ht->array[haidx] != NULL)
-	{
-		temp = ht->array[haidx];
-		while (temp != NULL)
-		{
-			if (strcmp(temp->key, new_node->key) == 0)
-				break;
-			temp = temp->next;
-		}
-		if (temp == NULL)
-		{
-			new_node->next = ht->array[haidx];
-			ht->array[haidx] = new_node;
-		}
-		else
-		{
-			free(temp->value);
-			temp->value = strdup(new_node->value);
-			free(new_node->value);
-			free(new_node->key);
-			free(new_node);
-		}
-	}
-	else
-	{
-		new_node->next = NULL;
-		ht->array[haidx] = new_node;
-	}
+
+	k_index = key_index((unsigned char *)key, ht->size);
+
+	if (add_n_hash(&(ht->array[k_index]), key, value) == NULL)
+		return (0);
+
 	return (1);
 }
